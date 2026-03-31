@@ -37,5 +37,5 @@ USER appuser
 # Expose the default ADK dev-server port
 EXPOSE 8000
 
-# Default: start the ADK web server
-CMD ["adk", "web", "--port", "8000", "diet_agent"]
+# Default: start the ADK web server bound to all interfaces
+CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8000", "diet_agent"]
