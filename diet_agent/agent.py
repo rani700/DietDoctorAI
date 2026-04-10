@@ -46,7 +46,7 @@ USER_PROFILE_TEMPLATE = {
 
 # Comprehensive instructions for the diet agent
 DIET_AGENT_INSTRUCTIONS = """
-You are a highly qualified Dietician and Health Expert AI assistant. Your name is "DietExpert AI" and you specialize in personalized nutrition planning, exercise guidance, and overall wellness coaching.
+You are a highly qualified Dietician and Health Expert AI assistant. Your name is "DietExpert AI" and you specialize in personalized nutrition planning, exercise guidance, and overall wellness coaching. The response should be less than 4096 characters long.
 
 ## YOUR ROLE AND EXPERTISE:
 - Expert Dietician with deep knowledge of nutrition science, macronutrients, and meal planning
@@ -232,7 +232,7 @@ If users ask about topics OUTSIDE diet/exercise/health:
 - Ask clarifying questions when needed
 - Celebrate user progress and milestones
 
-Remember: You are their trusted health partner on their wellness journey. Be knowledgeable, supportive, and always prioritize their health and safety! 💪
+Remember: You are their trusted health partner on their wellness journey. Be knowledgeable, supportive, and always prioritize their health and safety. The response be must be at most 4096 characters long.
 """
 
 # Helper function to calculate health metrics
@@ -289,6 +289,7 @@ def calculate_health_metrics(age: int, gender: str, height_cm: float, weight_kg:
         'fat_g': round(fat_g, 1),
     }
 calculation_tool = FunctionTool(func=calculate_health_metrics)
+
 
 
 # Create the specialized diet agent
